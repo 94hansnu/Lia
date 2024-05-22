@@ -21,9 +21,6 @@ playAgainBtn.addEventListener('click', () => {
     // Do nothing with localStorage, just redirect to quiz page
     window.location.href = 'quiz.html';
 });
-playAgainBtn.addEventListener('click', () => {
-    window.location.href = 'quiz.html';
-});
 
 exitBtn.addEventListener('click', () => {
     localStorage.removeItem('userName'); // tar bort användarens namn från local storage
