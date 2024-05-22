@@ -26,3 +26,14 @@ body, html {
     font-size: 1.5em;
     font-weight: 500;
 }
+
+.btn-pink {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+}
+
+.btn-pink:hover {
+    background-color: #ff1493;
+    color: white;
+}
