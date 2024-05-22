@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalQuestions = quizResults.correct + quizResults.incorrect;
 
     // Update the result texts using querySelector
-    document.querySelector('#resultText').textContent = `Här är din resultat ${userName}`;
+    document.querySelector('#resultText').textContent = `Här är ditt resultat ${userName}`;
     document.querySelector('#scoreText').textContent = `Resultat: ${quizResults.correct}/${totalQuestions}`;
     document.querySelector('#correctText').textContent = `Rätt svar: ${quizResults.correct}`;
     document.querySelector('#incorrectText').textContent = `Fel svar: ${quizResults.incorrect}`;
