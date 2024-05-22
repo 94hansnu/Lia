@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = [
         { src: 'Är AI/12-0063809-652755d727f41 (1).png', isAI: true, text: 'AI-genererade bilder får ofta fel på text. Kika på tröjans logga till höger!' },
         { src: 'Är AI/100k-ai-faces-3 (1).jpg', isAI: true, text: 'Även om bilden ser realistisk ut på många sätt, finns det detaljerna som avslöjar. Tänderna har exempelvis blivit ganska fel.' },
-        { src: 'Är AI/ebd926b6-d956-4a9d-907e-8dc4694caab6 (1).png', isAI: true, text: 'Ovanåkers kommun har startat ett Instagramkonto med AI-genererade bilder för att locka fler till äldrevåden. Målet är attl få fram känslan för det de gör med ansikten och inte bara miljöbilder.' },
+        { src: 'Är AI/ebd926b6-d956-4a9d-907e-8dc4694caab6 (1).png', isAI: true, text: 'Ovanåkers kommun har startat ett Instagramkonto med AI-genererade bilder för att locka fler till äldrevåden. Målet är att få fram känslan för det de gör med ansikten och inte bara miljöbilder.' },
         { src: 'Är AI/image (2).png', isAI: true, text: 'AI-genererade bilder får ofta detaljerna fel! Titta noga på smycken, fingrar och tatueringar.' },
         { src: 'Är AI/image (5).png', isAI: true, text: 'The Digitals är en serie AI-generade modeller. På bild syns J-yung.' },
         { src: 'Är AI/image (9).png', isAI: true, text: 'Influencern Aitana Lopez skapades av en spansk reklambyrån, som var trötta på att samarbeta med riktiga influencers.' },
@@ -32,8 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadImage() {
         if (currentImageIndex < images.length) {
             document.getElementById('quizImage').src = images[currentImageIndex].src;
-            document.getElementById('infoText').innerText = '';
+            document.getElementById('infoText').innerHTML = '';
             document.getElementById('nextImage').style.display = 'none';
+            document.querySelectorAll('.answerBtn').forEach(button => {
+                button.disabled = false;
+            });
         } else {
             const quizResults = { correct: correctAnswers, incorrect: totalAnswers - correctAnswers };
             localStorage.setItem('quizResults', JSON.stringify(quizResults));
@@ -52,11 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Hantera svar baserat på om bilden är isBothAIAndNotAI eller inte
             const isCorrect = isBothAIAndNotAI || (answer === 'yes' && currentImage.isAI) || (answer === 'no' && !currentImage.isAI);
             
-            document.getElementById('infoText').innerText = isCorrect ? 'Rätt svar!' : 'Fel svar.';
-            document.getElementById('infoText').innerText += ' ' + currentImage.text;
+            document.getElementById('infoText').innerHTML = isCorrect ? '<span class="bold-text">Rätt svar:</span> ' + currentImage.text : '<span class="bold-text">Fel svar:</span> ' + currentImage.text;
             if (isCorrect) correctAnswers++;
             totalAnswers++;
             document.getElementById('nextImage').style.display = 'block';
+
+            // Inaktivera alla svarsknappar efter att ett svar har valts
+            document.querySelectorAll('.answerBtn').forEach(button => {
+                button.disabled = true;
+            });
         });
     });
 
