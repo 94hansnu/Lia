@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    font-family: 'Montserrat', sans-serif;
 }
 
 body, html {
@@ -42,24 +42,36 @@ body, html {
     opacity: 0.7;
 }
 
-
 .answerBtn {
-    background-color: #ff6f61; /* Orange färg */
-    color: #fff;
-    border: none;
     padding: 10px 20px;
     font-size: 16px;
-    border-radius: 25px; /* Rundade hörn för en mjukare look */
+    border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.answerBtn:hover {
-    background-color: #ff4d39; /* Ljusare nyans av orange vid hover */
+.answerBtn-yes {
+    background-color: #90ee90; /* Ljus grön färg */
+    color: #fff;
+    border: none;
+}
+
+.answerBtn-yes:hover {
+    background-color: #66cc66; /* Ljusare nyans av grön vid hover */
+}
+
+.answerBtn-no {
+    background-color: #ff9999; /* Ljus röd färg */
+    color: #fff;
+    border: none;
+}
+
+.answerBtn-no:hover {
+    background-color: #ff6666; /* Ljusare nyans av röd vid hover */
 }
 
 #nextImage {
-    background-color: #4caf50; /* Grön färg */
+    background-color: #ff69b4; /* Rosa färg */
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -70,20 +82,18 @@ body, html {
 }
 
 #nextImage:hover {
-    background-color: #388e3c; /* Ljusare nyans av grön vid hover */
+    background-color: #ff1493; /* Ljusare nyans av rosa vid hover */
 }
 
-.card-title { /*rubriken*/
+.card-title {
     font-family: 'Roboto', sans-serif;
     font-size: 2em; 
     margin-bottom: 20px; 
-    /*border: 2px solid #5a5e5a; */
-    padding: 10px; 
     border-radius: 15px; 
     background-color: #f8f9fa; 
+    color: #ff1493; /* Rosa textfärg */
 }
 
-
-
-
-
+.bold-text {
+    font-weight: 700;
+}
