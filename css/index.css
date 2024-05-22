@@ -10,17 +10,20 @@
 body, html {
     width: 100%;
     height: 100%;
-    background-color: #ccc9c9;
+    background-color: #f0f0f0; /* Ändrad bakgrundsfärg för att göra den mjukare */
 }
 
 .card {
     width: 100%;
     max-width: 600px;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
 .text {
-    font-size: 1.5em;
+    font-size: 1.2em; /* Minskat font-size */
     font-weight: 500;
 }
 
@@ -28,6 +31,9 @@ body, html {
     background-color: #ff69b4;
     color: white;
     border: none;
+    padding: 10px 20px;
+    font-size: 1em; /* Minskat font-size */
+    border-radius: 5px;
 }
 
 .btn-pink:hover {
@@ -37,7 +43,7 @@ body, html {
 
 .card-title { /*rubriken*/
     font-family: 'Roboto', sans-serif;
-    font-size: 2em; 
+    font-size: 1.8em; /* Minskat font-size */
     margin-bottom: 20px; 
     padding: 10px; 
     border-radius: 15px; 
@@ -46,4 +52,31 @@ body, html {
 
 .text-pink {
     color: #ff1493; /* Rosa färg */
+}
+
+ol {
+    padding-left: 20px; /* Indrag för listan */
+    margin-bottom: 20px;
+}
+
+li {
+    margin: 10px 0; /* Mindre avstånd mellan listobjekt */
+}
+
+.link-text {
+    text-align: left;
+    font-size: 1em; /* Minskat font-size */
+}
+
+.intro-text, .conclusion-text {
+    font-size: 1.1em; /* Minskat font-size */
+    margin-bottom: 10px; /* Mindre utrymme under varje paragraf */
+}
+
+#userName {
+    margin-bottom: 15px; /* Mindre avstånd under inputfältet */
+}
+
+.card-body {
+    padding: 30px; /* Mindre padding i card body */
 }
